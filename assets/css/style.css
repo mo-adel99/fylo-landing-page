@@ -1,0 +1,269 @@
+:root {
+  --Bright-Blue: hsl(224, 93%, 58%);
+  --Moderate-Cyan: hsl(170, 45%, 43%);
+  --Light-Grayish-Blue: hsl(240, 75%, 98%);
+  --Light-Gray: hsl(0, 0%, 75%);
+  --dark-blue: #0A0639;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+}
+
+h2, h3 {
+  font-family: 'Raleway', sans-serif;
+  color: var(--dark-blue);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-blue);
+}
+
+main > * {
+  padding: 0 1.9rem;
+}
+
+
+/* NAVBAR */
+nav {
+  padding-block: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > div {
+  width: 30%;
+  display: flex;
+}
+
+nav .logo {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul a {
+  font-size: .8rem;
+}
+
+
+/* HEADER SECTION */
+header {
+  padding-block: 5rem 0;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  text-align: center;
+  min-height: 80vh;
+  margin-bottom: 6rem;
+}
+
+header .header-image {
+  margin-bottom: 2rem;
+}
+
+header .header-image img {
+  width: 100%;
+}
+
+header .header-text {
+  color: var(--dark-blue);
+}
+
+.header-text h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 1.6rem;
+}
+
+.header-text p {
+  margin-bottom: 1.8rem;
+  line-height: 1.4;
+  font-size: .9rem;
+  color: var(--dark-blue);
+}
+
+header form {
+  display: flex;
+  flex-direction: column;
+}
+
+header form .email {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+header form .email input {
+  outline: none;
+  padding: .7rem 1.25rem;
+  border-radius: 3px;
+  border: 1px solid #00000088;
+  transition: all 250ms ease-in-out;
+}
+
+header form .email input:focus {
+  border: 1px solid crimson;
+}
+
+header form .email input::placeholder { 
+  color: var(--Light-Gray);
+} 
+
+header form .email span {
+  font-size: .8rem;
+  color: crimson;
+  visibility: hidden;
+  transition: all 250ms ease-in-out;
+  opacity: 0;
+}
+
+header form .email input:focus + span{
+  visibility: visible;
+  opacity: 1;
+}
+
+header form button {
+  padding: .8rem 1.2rem;
+  border-radius: 3px;
+  background-color: var(--Bright-Blue);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+header form button:hover {
+  background-color: hsl(224, 100%, 69%);
+}
+
+
+/* FEATURES SECTION */
+.features-section {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem;
+  background-color: #F8F8FE;
+  position: relative;
+}
+
+.features-section::before {
+  content: "";
+  background-image: url('../images/bg-curve-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -40px;
+}
+
+.features-image {
+  order: -1;
+  margin-bottom: 4rem;
+}
+
+.features-image img {
+  width: 100%;
+}
+
+
+
+/* DESKTOP */
+@media screen and (min-width: 500px) {
+  main > * {
+    padding: 0 4rem;
+  }
+
+  /* NAVBAR */
+  nav {
+    padding-block: 3rem 0;
+  }
+
+  nav > div {
+    width: 10%;
+  }
+
+  nav ul {
+    gap: 3.5rem;
+  }
+
+  nav ul a {
+    font-size: 1.1rem;
+  }
+
+
+  /* HEADER SECTION */
+  header {
+    padding-block: 0;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    min-height: 80vh;
+    margin-bottom: 5rem;
+  }
+
+  header .header-image {
+    margin-bottom: 0;
+    flex: 1;
+  }
+
+  header .header-text {
+    flex: 1;
+  }
+
+  .header-text h1 {
+    font-size: 2.5rem;
+    font-family: 'Raleway', sans-serif;
+    width: 95%;
+    margin-bottom: 1.2rem;
+  }
+
+  .header-text p {
+    margin-bottom: 1.4rem;
+    line-height: 1.4;
+    width: 95%;
+    font-size: 1.15rem;
+  }
+
+  header form {
+    width: 75%;
+    flex-direction: row;
+    gap: .8rem;
+    align-items: flex-start;
+  }
+
+  header form .email {
+    flex: 2;
+  } 
+
+  header form button {
+    flex: 1;
+  }
+
+
+  /* FEATURES SECTION */
+  .features-section::before {
+    background-image: url('../images/bg-curve-desktop.svg');
+    top: -100px;
+  }
+}

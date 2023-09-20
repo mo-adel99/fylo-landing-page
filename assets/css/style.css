@@ -334,11 +334,11 @@ footer {
   padding-block: 3rem;
 }
 
-.logo {
+footer .logo {
   margin-bottom: 2rem;
 }
 
-.logo svg path {
+footer .logo svg path {
   color: #fff;
 }
 
